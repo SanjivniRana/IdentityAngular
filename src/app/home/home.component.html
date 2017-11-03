@@ -1,0 +1,19 @@
+<div class="bgimg" style="height: 740px">
+<div style="padding-top: 220px; text-align: center">
+<h2 style="font-family:Georgia, 'Times New Roman', Times, serif; font: bold; color: white">Click the Button to see the list of Customers</h2>
+</div>
+<div class="container" style="padding-top: 30px; text-align: center">
+<form role="form" (submit)="login($event, username.value, password.value)">
+    <label for="exampleInputUsername1"><h2 style="font-family: Georgia, 'Times New Roman', Times, serif">UserName</h2></label>
+    <input style="width: 400px;margin-left: 380px;" #username id="username" required="required" type="username" class="form-control" id="username" placeholder="Username">
+    <label for="exampleInputPassword1"><h2 style="font-family: Georgia, 'Times New Roman', Times, serif">Password</h2></label>
+    <input style="width: 400px;margin-left: 380px;" #password id="password" required="required" type="password" class="form-control" id="password" placeholder="Password">
+  <div class="mass" style="padding: 20px;">
+  <button type="submit" class="btn btn-success btn-lg " style="font-family: Georgia, 'Times New Roman', Times, serif" >
+  List of Customers
+</button>
+      <input type="button" class="btn btn-success btn-lg" value="Register" [routerLink]="['/register']">
+
+</div>
+</form>
+</div>

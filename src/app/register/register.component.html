@@ -1,0 +1,94 @@
+<div class="mj5">
+
+
+<form [formGroup]="userForm" (ngSubmit)="register()" novalidate style="margin: 160px;margin-left: 500px">
+    <h1 style="margin-bottom: 30px;margin-left: 140px;font-family: Georgia, 'Times New Roman', Times, serif;color:black"> Register User</h1>
+ <div class="form-group row">
+    <label for="" class="col-md-12">Email</label>
+
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!userForm.controls['email'].valid && (userForm.controls['email'].dirty || submitted)">
+        <div *ngIf="userForm.controls['email'].hasError('required')">
+          Email is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-md-12">UserName</label>
+
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!userForm.controls['username'].valid && (userForm.controls['username'].dirty || submitted)">
+        <div *ngIf="userForm.controls['username'].hasError('required')">
+          UserName is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-md-12">Password</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="password">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!userForm.controls['password'].valid && (userForm.controls['password'].dirty || submitted)">
+        <div *ngIf="userForm.controls['password'].hasError('required')">
+          Password is required
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label for="" class="col-md-12">Confirm Password</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="confirmpassword">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!userForm.controls['confirmpassword'].valid && (userForm.controls['confirmpassword'].dirty || submitted)">
+        <div *ngIf="userForm.controls['confirmpassword'].hasError('required')">
+         Confirm Password is required
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label for="" class="col-md-12">First Name</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="firstname">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!userForm.controls['firstname'].valid && (userForm.controls['firstname'].dirty || submitted)">
+        <div *ngIf="userForm.controls['firstname'].hasError('required')">
+          First Name is required
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label for="" class="col-md-12">Last Name</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="lastname">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!userForm.controls['lastname'].valid && (userForm.controls['lastname'].dirty || submitted)">
+        <div *ngIf="userForm.controls['lastname'].hasError('required')">
+          Last Name is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-8">
+      <input type="submit" class="btn btn-primary" value="Register" />
+      <input type="button" class="btn btn-warning" value="Cancel" [routerLink]="['/home']">
+    </div>
+
+  </div>
+</form>
+</div>

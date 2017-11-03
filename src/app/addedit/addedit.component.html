@@ -1,0 +1,62 @@
+<div class="mj5">
+
+
+<form [formGroup]="customerForm" (ngSubmit)="save()" novalidate style="margin: 160px;margin-left: 500px">
+    <h1 style="margin-bottom: 30px;margin-left: 140px;font-family: Georgia, 'Times New Roman', Times, serif;color:black">{{title}} Customer</h1>
+
+  <div class="form-group row">
+    <label for="" class="col-md-12">Name</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!customerForm.controls['name'].valid && (customerForm.controls['name'].dirty || submitted)">
+        <div *ngIf="customerForm.controls['name'].hasError('required')">
+          Name is required
+        </div>
+        <div *ngIf="customerForm.controls['name'].hasError('minlength')">
+          Min. 3 charaters
+        </div>
+        <div *ngIf="customerForm.controls['name'].hasError('maxlength')">
+          Must not exceed 30 charaters
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-md-12">Email</label>
+
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!customerForm.controls['email'].valid && (customerForm.controls['email'].dirty || submitted)">
+        <div *ngIf="customerForm.controls['email'].hasError('required')">
+          Email is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-md-12">Password</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" formControlName="password">
+    </div>
+    <div class="col-md-6">
+      <div class="error" *ngIf="!customerForm.controls['password'].valid && (customerForm.controls['password'].dirty || submitted)">
+        <div *ngIf="customerForm.controls['password'].hasError('required')">
+          Password is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-8">
+      <input type="submit" class="btn btn-primary" value="Save" />
+      <input type="button" class="btn btn-warning" value="Cancel" (click)="cancel()">
+    </div>
+
+  </div>
+</form>
+</div>
